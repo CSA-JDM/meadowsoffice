@@ -55,11 +55,12 @@ class App(tk.Frame):
 
     def open_file_command(self):
         file_name = filedialog.askopenfilename()
-        self.widgets["main_text"].delete(1.0, tk.END)
-        file_txt = open(file_name, "r")
-        self.widgets["main_text"].insert(1.0, file_txt.read())
-        file_txt.close()
-        self.master.title(f"{'.'.join(file_name.split('/')[-1].split('.')[:-1])} - meadowsoffice")
+        if file_name != "":
+            self.widgets["main_text"].delete(1.0, tk.END)
+            file_txt = open(file_name, "r")
+            self.widgets["main_text"].insert(1.0, file_txt.read())
+            file_txt.close()
+            self.master.title(f"{'.'.join(file_name.split('/')[-1].split('.')[:-1])} - meadowsoffice")
 
     def save_command(self, file_name=" "):
         if file_name != " " and file_name != "":
