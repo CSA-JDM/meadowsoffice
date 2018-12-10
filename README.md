@@ -1,3 +1,3 @@
 # meadowsoffice
-V0.0.1
-* Initialization of github repository
+V1.0.0
+* Initial release
